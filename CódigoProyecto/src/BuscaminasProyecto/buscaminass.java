@@ -30,32 +30,57 @@ public class buscaminass {
 		int columnas;
 		int [][] tablero;
 		
-		switch(nivel) {
-			case 1:
-					
-				
-			case 2:
-				
-				
-			case 3:
-				
 		
-				
-				
-			case 4:
-		
-			default: System.out.println("Selección incorrecta, intentelo de nuevo");
+			do {
+			
+			System.out.println("Presione 1, para el nivel fácil, 2 para el nivel intermedio, 3 para el nivel difícil o 4 para el nivel custom: ");
 			nivel = sc.nextInt();
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
+			
+			switch(nivel) {
+				
+				
+			
+					case 1:
+								
+							System.out.println(Arrays.deepToString(generarMinas(generarTablero(3,3), 3)));
+							break;
+					
+					case 2:
+					
+							System.out.println(Arrays.deepToString(generarMinas(generarTablero(5,5), 8)));
+							break;
+							
+					case 3:
+
+					
+							System.out.println(Arrays.deepToString(generarMinas(generarTablero(8,8), 15)));
+							break;
+							
+					
+					case 4:
+			
+					
+							System.out.println("Introduce el número de filas : ");
+							filas = sc.nextInt();
+							
+							
+							System.out.println("Introduce el número de columnas : ");
+							columnas = sc.nextInt();
+							
+							
+							System.out.println("Introduce el número de minas : ");
+							minas = sc.nextInt();
+							
+							System.out.println(Arrays.deepToString(generarMinas(generarTablero(filas,columnas), minas)));
+							break;
+				
+					default : System.out.println("Selección incorrecta, intentelo de nuevo");
+					break;
+					}
+			
+			
+			}while(nivel < 1 || nivel > 4);	
 		
 		sc.close();
 
