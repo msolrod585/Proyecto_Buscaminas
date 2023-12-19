@@ -15,10 +15,16 @@ public class buscaminass {
 		int minas;
 		int filas;
 		int columnas;
+ HEAD
 		int nivel;
 		int contadorVidas;
 		int i, j;
-		
+
+		int [][] tablero;
+		int i, j,contadorVidas;
+		int [][] tablaMinas;
+			
+
 		
 			do {
 			
@@ -31,6 +37,7 @@ public class buscaminass {
 				
 			
 					case 1:
+<<<<<<< HEAD
 						pintaMatriz(3, 3);
 							break;
 					
@@ -39,6 +46,76 @@ public class buscaminass {
 							//System.out.println(Arrays.deepToString(generarMinas(generarTablero(5,5), 8)));
 							pintaMatriz(5, 5);
 							break;
+=======
+
+							tablaMinas = generarMinas(generarTablero(3,3),3);
+						
+                        contadorVidas = 5;
+                        
+                        pintaMatriz(3, 3);
+                        
+                    do {
+                    	
+                        System.out.println("Introduce la primera coordenada:");
+                        i = sc.nextInt();
+                        
+                        System.out.println("Introduce la segunda coordenada:");
+                        j = sc.nextInt();
+
+                        if( compruebaMinas(i, j, tablaMinas) == true ) {
+                        	
+                            contadorVidas --;
+                            
+                            System.out.println("Boom, ha perdido una vida");
+                            
+                        }else {
+                        	
+                        	
+                            System.out.println("Continúa");
+                        }
+                        
+
+                    }while(contadorVidas != 0);
+
+
+                            break;
+                            
+					case 2:
+					
+						tablaMinas = generarMinas(generarTablero(5,5),8);
+						
+                        contadorVidas = 7;
+                        
+                        pintaMatriz(5, 5);
+                        
+                    do {
+                    	
+                        System.out.println("Introduce la primera coordenada:");
+                        i = sc.nextInt();
+                        
+                        System.out.println("Introduce la segunda coordenada:");
+                        j = sc.nextInt();
+
+                        if( compruebaMinas(i, j, tablaMinas) == true ) {
+                        	
+                            contadorVidas --;
+                            
+                            System.out.println("Boom, ha perdido una vida");
+                            
+                        }else {
+                        	
+                        	
+                            System.out.println("Continúa");
+                        }
+                        
+
+                    }while(contadorVidas != 0);
+
+
+                            break;
+
+
+>>>>>>> testManuel
 							
 					case 3:
 
@@ -88,7 +165,18 @@ public class buscaminass {
 			
 		}
 		
+<<<<<<< HEAD
 		//Manu
+=======
+		
+		
+		
+		
+		
+		
+			
+		
+>>>>>>> testManuel
 		public static int [] [] generarMinas(int [][] generarTablero , int minas) {
 			Random random = new Random();
 			int [][] tablaMinas = generarTablero;
@@ -105,6 +193,7 @@ public class buscaminass {
 		return tablaMinas;
 		}
 		
+<<<<<<< HEAD
 
 	public static char[][] pintaMatriz(int filas, int columnas){
 		char[][] tableroPintado = new char[filas][columnas];
@@ -121,3 +210,21 @@ public class buscaminass {
 	}
 	
 }
+=======
+		
+	public static boolean compruebaMinas(int fila ,int columna, int [][] generarMinas){
+		
+		boolean explota = false;
+		
+				
+				if (generarMinas[fila][columna] == 1) {
+					
+					
+					explota = true ;
+					
+				} 
+				
+				return explota;
+			}
+
+>>>>>>> testManuel
