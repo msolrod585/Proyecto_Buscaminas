@@ -87,3 +87,69 @@ public class buscaminass {
 	}
 
 }
+
+	
+		public static int [] [] generarTablero(int filas, int columnas) {
+			
+			
+			int[][] tableroNivel = new int[filas][columnas];
+			
+			for (int i = 0; i < tableroNivel.length; i++) {
+				
+				 for (int j = 0; j < tableroNivel[i].length; j ++) {
+				
+				 }	
+				
+		}
+			
+			return tableroNivel;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+			
+		//Manu
+		public static int [] [] generarMinas(int [][] generarTablero , int minas) {
+			
+			
+			Random random = new Random();
+			
+			int [][] tablaMinas = generarTablero;
+			
+			
+			int contadorminas = 0;
+			
+				
+					 do {		
+						
+						int i1 = (int)(Math.random() * tablaMinas.length);
+							
+						int j1 = (int)(Math.random() * tablaMinas[i1].length);
+						
+						
+						
+							 if(tablaMinas[i1][j1] == 0){
+								 
+								tablaMinas[i1][j1] = 1;
+								
+								contadorminas++;
+								
+							 }
+							 
+
+							 
+					}while(contadorminas < minas);
+					 
+					 
+			
+			
+		return tablaMinas;
+		
+		}
+		
+	
