@@ -45,14 +45,74 @@ public class buscaminass {
 				
 			
 					case 1:
-								
-							System.out.println(Arrays.deepToString(generarMinas(generarTablero(3,3), 3)));
-							break;
-					
+
+							tablaMinas = generarMinas(generarTablero(3,3),3);
+						
+                        contadorVidas = 5;
+                        
+                        pintaMatriz(3, 3);
+                        
+                    do {
+                    	
+                        System.out.println("Introduce la primera coordenada:");
+                        i = sc.nextInt();
+                        
+                        System.out.println("Introduce la segunda coordenada:");
+                        j = sc.nextInt();
+
+                        if( compruebaMinas(i, j, tablaMinas) == true ) {
+                        	
+                            contadorVidas --;
+                            
+                            System.out.println("Boom, ha perdido una vida");
+                            
+                        }else {
+                        	
+                        	
+                            System.out.println("Continúa");
+                        }
+                        
+
+                    }while(contadorVidas != 0);
+
+
+                            break;
+                            
 					case 2:
 					
-							System.out.println(Arrays.deepToString(generarMinas(generarTablero(5,5), 8)));
-							break;
+						tablaMinas = generarMinas(generarTablero(5,5),8);
+						
+                        contadorVidas = 7;
+                        
+                        pintaMatriz(5, 5);
+                        
+                    do {
+                    	
+                        System.out.println("Introduce la primera coordenada:");
+                        i = sc.nextInt();
+                        
+                        System.out.println("Introduce la segunda coordenada:");
+                        j = sc.nextInt();
+
+                        if( compruebaMinas(i, j, tablaMinas) == true ) {
+                        	
+                            contadorVidas --;
+                            
+                            System.out.println("Boom, ha perdido una vida");
+                            
+                        }else {
+                        	
+                        	
+                            System.out.println("Continúa");
+                        }
+                        
+
+                    }while(contadorVidas != 0);
+
+
+                            break;
+
+
 							
 					case 3:
 
