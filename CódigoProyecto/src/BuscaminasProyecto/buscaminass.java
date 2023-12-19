@@ -29,6 +29,9 @@ public class buscaminass {
 		int filas;
 		int columnas;
 		int [][] tablero;
+		int i, j,contadorVidas;
+		int [][] tablaMinas;
+			
 		
 		
 			do {
