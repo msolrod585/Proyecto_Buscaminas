@@ -113,7 +113,7 @@ public class buscaminass {
 		
 		
 			
-		//Manu
+		
 		public static int [] [] generarMinas(int [][] generarTablero , int minas) {
 			
 			
@@ -152,4 +152,19 @@ public class buscaminass {
 		
 		}
 		
-	
+		
+	public static boolean compruebaMinas(int fila ,int columna, int [][] generarMinas){
+		
+		boolean explota = false;
+		
+				
+				if (generarMinas[fila][columna] == 1) {
+					
+					
+					explota = true ;
+					
+				} 
+				
+				return explota;
+			}
+
