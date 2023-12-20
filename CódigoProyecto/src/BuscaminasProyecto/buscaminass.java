@@ -5,9 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class buscaminass {
-
-	public static void main(String[] args) {
-		var sc = new Scanner(System.in);
+var sc = new Scanner(System.in);
 		System.out.println("¡Bienvenido al Buscaminas!");
 		System.out.println("Las reglas son simples, deberá seleccionar la posición de una casilla del tablero para revelar su contenido. Si es una mina, explotará, si no es una mina, podrá seguir jugando");
 		int minas;
@@ -15,29 +13,23 @@ public class buscaminass {
 		int columnas;
 		int nivel;
 		int i, j,contadorVidas;
+		int sinBombas = 0;
 		int [][] tablaMinas;
 			
 
 		
 			do {
-			
 			System.out.println("Presione 1, para el nivel fácil, 2 para el nivel intermedio, 3 para el nivel difícil o 4 para el nivel custom: ");
 			nivel = sc.nextInt();
 			
-			
 			switch(nivel) {
-				
-				
-			
+
 					case 1:
-						
 						tablaMinas = generarMinas(generarTablero(3,3),3);
-                        contadorVidas = 5;
+                        contadorVidas = 3;
                         pintaMatriz(3, 3);
-                        
                     do {
-                    	
-                        System.out.println("Introduce la primera coordenada:");
+                        System.out.println("\nIntroduce la primera coordenada:");
                         i = sc.nextInt();
                         
                         System.out.println("Introduce la segunda coordenada:");
@@ -48,22 +40,25 @@ public class buscaminass {
                             System.out.println("Boom, ha perdido una vida");
                         }else {
                             System.out.println("Continúa");
-                            
+                            sinBombas ++; 
                         }
-                        
-                    }while(contadorVidas != 0 );
+                       System.out.println("["+i+"]"+"["+j+"]");
+                       
+                    }while(contadorVidas != 0 && sinBombas <= 6 );
+			                    if(sinBombas == 6){
+			            			System.out.println("Has Ganado!");
+			            		}else if(contadorVidas == 0) {
+			            			System.out.println("Te has quedado sin vidas. Has perdido");
+			            		}
                             break;
-                            
-                            
-                            
+                          
 					case 2:
 						tablaMinas = generarMinas(generarTablero(5,5),8);
                         contadorVidas = 7;
                         pintaMatriz(5, 5);
                         
                     do {
-                    	
-                        System.out.println("Introduce la primera coordenada:");
+                        System.out.println("\nIntroduce la primera coordenada:");
                         i = sc.nextInt();
                         
                         System.out.println("Introduce la segunda coordenada:");
@@ -74,11 +69,18 @@ public class buscaminass {
                             System.out.println("Boom, ha perdido una vida");
                         }else{
                             System.out.println("Continúa");
+                            sinBombas ++; 
                         }
-                    }while(contadorVidas != 0);
+                       System.out.println("["+i+"]"+"["+j+"]");
+                       
+                    }while(contadorVidas != 0 && sinBombas < 17 );
+		                    if(sinBombas == 17){
+		            			System.out.println("Has Ganado!");
+		            		}else if(contadorVidas == 0) {
+		            			System.out.println("Te has quedado sin vidas. Has perdido");
+		            		}
                             break;
 
-		
 					case 3:
 							pintaMatriz(8, 8);
 							
@@ -88,7 +90,7 @@ public class buscaminass {
 	                        
 	                    do {
 	                    	
-	                        System.out.println("Introduce la primera coordenada:");
+	                        System.out.println("\nIntroduce la primera coordenada:");
 	                        i = sc.nextInt();
 	                        
 	                        System.out.println("Introduce la segunda coordenada:");
@@ -99,14 +101,21 @@ public class buscaminass {
 	                            System.out.println("Boom, ha perdido una vida");
 	                        }else{
 	                            System.out.println("Continúa");
+	                            sinBombas ++; 
 	                        }
-	                    }while(contadorVidas != 0);
+	                       System.out.println("["+i+"]"+"["+j+"]");
+	                       
+	                    }while(contadorVidas != 0 && sinBombas < 49 );
+			                    if(sinBombas == 49){
+		                			System.out.println("Has Ganado!");
+		                		}else if(contadorVidas == 0) {
+			            			System.out.println("Te has quedado sin vidas. Has perdido");
+			            		}
 	                            break;
-	                            
 	                            
 					case 4:
 			
-							System.out.println("Introduce el número de filas : ");
+							System.out.println("\nIntroduce el número de filas : ");
 							filas = sc.nextInt();
 							System.out.println("Introduce el número de columnas : ");
 							columnas = sc.nextInt();
@@ -129,10 +138,17 @@ public class buscaminass {
 	                            System.out.println("Boom, ha perdido una vida");
 	                        }else{
 	                            System.out.println("Continúa");
+	                            sinBombas ++; 
 	                        }
-	                        
-	                    }while(contadorVidas != 0 );
-							break;
+	                       System.out.println("["+i+"]"+"["+j+"]");
+	                       
+	                    }while(contadorVidas != 0  &&  sinBombas < (filas*columnas) - minas );
+	                    		if(sinBombas == ((filas*columnas) - minas)){
+	                    			System.out.println("Has Ganado!");
+	                    		}else if(contadorVidas == 0) {
+			            			System.out.println("Te has quedado sin vidas. Has perdido");
+			            		}
+	                            break;
 				
 					default : System.out.println("Selección incorrecta, intentelo de nuevo");
 					break;
