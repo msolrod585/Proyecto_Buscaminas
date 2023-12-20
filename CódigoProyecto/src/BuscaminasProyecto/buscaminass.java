@@ -85,7 +85,7 @@ var sc = new Scanner(System.in);
 							pintaMatriz(8, 8);
 							
 							tablaMinas = generarMinas(generarTablero(8,8),15);
-	                        contadorVidas = 13;
+	                        contadorVidas = 10;
 	                        pintaMatriz(8, 8);
 	                        
 	                    do {
