@@ -5,3 +5,7 @@
 # Añadida la función que pinta la matriz en cada nivel.
 # Se añade una funcion para que compruebe si en la posicion que estamos hay o no una mina
 # Se añaden las variables que el jugador establezca que posicion quiere descubrir y tambien otra que nos la revelará.
+# Añadido si hemos ganado o perdido 
+# Añadido el caso 3 y 4
+# Añadido comentarios
+# Modificacion de los valores de ciertas variables.
