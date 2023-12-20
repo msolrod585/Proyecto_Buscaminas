@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class buscaminass {
 var sc = new Scanner(System.in);
-		System.out.println("¡Bienvenido al Buscaminas!");
+		System.out.println("¡Bienvenido al Buscaminas!"); //introducción al juego y declaración de variables
 		System.out.println("Las reglas son simples, deberá seleccionar la posición de una casilla del tablero para revelar su contenido. Si es una mina, explotará, si no es una mina, podrá seguir jugando");
 		int minas;
 		int filas;
@@ -18,13 +18,13 @@ var sc = new Scanner(System.in);
 			
 
 		
-			do {
+			do { 
 			System.out.println("Presione 1, para el nivel fácil, 2 para el nivel intermedio, 3 para el nivel difícil o 4 para el nivel custom: ");
-			nivel = sc.nextInt();
+			nivel = sc.nextInt(); //Este bucle nos ayuda a seleccionar el nivel de dificultad en el que queremos jugar 
 			
 			switch(nivel) {
 
-					case 1:
+					case 1: //Dentro de cada caso nos encontraremos un bucle do while que permite al jugador introducir las coordenadas reiteradas veces hasta que gane o pierda
 						tablaMinas = generarMinas(generarTablero(3,3),3);
                         contadorVidas = 3;
                         pintaMatriz(3, 3);
@@ -44,7 +44,7 @@ var sc = new Scanner(System.in);
                         }
                        System.out.println("["+i+"]"+"["+j+"]");
                        
-                    }while(contadorVidas != 0 && sinBombas <= 6 );
+                    }while(contadorVidas != 0 && sinBombas <= 6 ); 
 			                    if(sinBombas == 6){
 			            			System.out.println("Has Ganado!");
 			            		}else if(contadorVidas == 0) {
@@ -158,7 +158,7 @@ var sc = new Scanner(System.in);
 			}
 
 	
-		public static int [] [] generarTablero(int filas, int columnas) {
+		public static int [] [] generarTablero(int filas, int columnas) { //la función generar tablero es invocada para generar una matriz rellena de ceros con dimensiones especificas
 			int[][] tableroNivel = new int[filas][columnas];
 			for (int i = 0; i < tableroNivel.length; i++) {
 				 for (int j = 0; j < tableroNivel[i].length; j ++) {
@@ -168,7 +168,7 @@ var sc = new Scanner(System.in);
 			}
 		
 
-		public static int [] [] generarMinas(int [][] generarTablero , int minas) {
+		public static int [] [] generarMinas(int [][] generarTablero , int minas) { //la función generarMinas asigna minas o "1"s aleatorios en la matriz tableroNivel;
 			int [][] tablaMinas = generarTablero;
 			int contadorminas = 0;
 					 do {		
@@ -184,7 +184,7 @@ var sc = new Scanner(System.in);
 		
 
 
-	public static char[][] pintaMatriz(int filas, int columnas){
+	public static char[][] pintaMatriz(int filas, int columnas){ // Imprime una versión gráfica de la matriz con valores ocultos para que el jugador pueda ver las posiciones más claramente
 		char[][] tableroPintado = new char[filas][columnas];
 		for(int i=0; i< tableroPintado.length; i++){
 			 System.out.println();
@@ -198,7 +198,7 @@ var sc = new Scanner(System.in);
 	
 
 		
-	public static boolean compruebaMinas(int fila ,int columna, int [][] generarMinas){
+	public static boolean compruebaMinas(int fila ,int columna, int [][] generarMinas){ //Comprueba si en la casilla/coordenada introducida hay o no hay una bomba
 		boolean explota = false;
 			if (generarMinas[fila][columna] == 1) {
 					explota = true ;
